@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            messageText: "",
             messagesNumb: 0,
             activeItem: 0,
             contacts: [
@@ -177,6 +178,32 @@ createApp({
             this.activeItem = index
             console.log(this.activeItem)
         },
+
+        messageReceived() {
+            messageReceived = {
+                date: '10/01/2020 15:30:55',
+                message: "ok",
+                status: 'received'
+            }
+
+            this.contacts[this.activeItem].messages.push(messageReceived)
+
+        },
+
+        sendMessage() {
+            messageSent = {
+                date: '10/01/2020 15:30:55',
+                message: this.messageText,
+                status: 'sent'
+            }
+
+            this.contacts[this.activeItem].messages.push(messageSent)
+
+            this.messageText = ""
+
+            setTimeout(this.messageReceived, 1000)
+                
+        }
     }
 }).mount('#app')
 
