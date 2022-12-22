@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Boolzapp</title>
+    <link rel="shortcut icon" href="./img/icon-boolzapp.png" type="image/x-icon">
+</head>
+<body>
+    <div id="app">
+        <div class="main_container w-100 h-100">
+            <div class="main_row w-100 h-100 flex justify_center align_center">
+                <div class="main_col">
+                    <div class="main_row w-100 h-100">
+
+                        <!-- Sidebar -->
+                        <div class="col sidebar h-100">
+                            <!-- Sidebar header -->
+                            <div class="row side_header">
+                                <div class="col w-100 h-100">
+                                    <div class="row h-100 flex align_center justify_between">
+                                        <div class="flex align_center">
+                                            <div> 
+                                                <img class="avatar_my_icon" src="./img/avatar_io.jpg" alt="avatar_io">
+                                            </div>
+                                            <div class="name">
+                                                <h4>Sofia</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex align_center icon_grey">
+                                            <i class="fa-solid fa-circle-notch"></i>
+                                            <i class="fa-solid fa-message"></i>
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Notifications -->
+                            <div class="row notific_banner flex align_center">
+                                <div class="notif_icon">
+                                    <i class="fa-solid fa-bell-slash"></i>
+                                </div>
+                                <div class="notif_text">
+                                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                                    <a href="#">Attiva notifiche desktop</a>
+                                </div>
+
+                            </div>
+
+                            <!-- Search bar -->
+                            <div class="row search_bar_cont flex align_center">
+                                <div class="search_bar_border flex align_center w-100">
+                                    <div class="icon_grey search_bar_icon flex align_center">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <input class="search_bar w-100" type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                                </div>
+                            </div>
+
+                            <!-- Contacts -->
+                            <div class="row main_contacts_container">
+                                <div v-for="(item, index) in contacts" class="contact_container flex align_center">
+                                    <div class="avatar_container">
+                                        <img class="avatar_icon" :src="`./img/avatar${item.avatar}.jpg`" alt="avatar">
+                                    </div>
+                                    <div class="avatar_text">
+                                        <h3>{{item.name}}</h3>
+                                        <h5>Ultimo messaggio inviato</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col message_window">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Vue Js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
