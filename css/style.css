@@ -94,6 +94,7 @@ h5 {
         .side_header, .message_header, .message_footer {
             padding: .3rem;
             background-color: rgb(234, 234, 234);
+            z-index: 1;
         }
 
         .name {
@@ -190,6 +191,8 @@ h5 {
     .message_window {
         width: 65%;
         position: relative;
+        background-image: url("../img/mine.jpg");
+        background-size: auto;
     }
 
     /* Message header */
@@ -206,9 +209,45 @@ h5 {
     /* Message header */
 
     /* Message content */
-        .message_content {
-            background-image: url("../img/mine.jpg");
-            background-size: auto;
+        .messages {
+            padding: 5rem 4rem;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        .message {
+            max-width: 40%;
+            padding: .7rem 3rem .7rem .7rem;
+            border-radius: .5rem;
+            position: relative;
+            margin-bottom: .6rem;
+        }
+
+        .message p {
+            font-size: .8rem;
+        }
+
+        .sent {
+            background-color: rgb(213, 249, 186);
+        }
+
+        .received {
+            background-color: white;
+        }
+
+        .message_time {
+            color: gray;
+            position: absolute;
+            right: 7px;
+            bottom: 2px;
+        }
+
+        .message_sent {
+            justify-content: end;
+        }
+
+        .message_received {
+            justify-content: start;
         }
     /* Message content */
 

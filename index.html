@@ -117,7 +117,18 @@
 
                             <!-- Messages window content -->
                             <div class="row message_content h-100">
-
+                                <div class="messages flex h-100">
+                                    <div v-for="(item, index) in contacts[activeItem].messages" :class="contacts[activeItem].messages[index].status == 'sent' ? 'message_sent' : 'message_received'" class="w-100 flex">
+                                        <div v-if="contacts[activeItem].messages[index].status == 'sent'" class="message sent">
+                                            <p>{{contacts[activeItem].messages[index].message}}</p>
+                                            <h5 class="message_time">15:50</h5>
+                                        </div>
+                                        <div v-else class="message received">
+                                            <p>{{contacts[activeItem].messages[index].message}}</p>
+                                            <h5 class="message_time">15:50</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Messages window footer -->
