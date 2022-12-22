@@ -92,7 +92,7 @@ h5 {
     }
     
     /* Side Header */
-        .side_header {
+        .side_header, .message_header {
             padding: .3rem;
             background-color: rgb(234, 234, 234);
         }
@@ -164,6 +164,11 @@ h5 {
             padding: .5rem;
             background-color: white;
             border-top: 1px solid rgb(229, 229, 229);
+        }
+
+        .contact_container:hover {
+            cursor: pointer;
+            background-color: rgb(233, 235, 235);
         }    
 
         .avatar_icon {
@@ -181,4 +186,18 @@ h5 {
         }
     /* Contacs */
 /* Siderbar */
+
+/* Messages wondow */
+    .message_window {
+        width: 65%;
+    }
+
+    .message_header {
+        border-left: 1px solid rgb(205, 205, 205);
+    }
+
+    .name h5 {
+        color: gray;
+    }
+/* Messages wondow */
   

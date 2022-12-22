@@ -22,7 +22,7 @@
         <div class="main_container w-100 h-100">
             <div class="main_row w-100 h-100 flex justify_center align_center">
                 <div class="main_col">
-                    <div class="main_row w-100 h-100">
+                    <div class="main_row w-100 h-100 flex">
 
                         <!-- Sidebar -->
                         <div class="col sidebar h-100">
@@ -74,7 +74,7 @@
 
                             <!-- Contacts -->
                             <div class="row main_contacts_container">
-                                <div v-for="(item, index) in contacts" class="contact_container flex align_center">
+                                <div v-for="(item, index) in contacts" class="contact_container flex align_center" @click="visibleContact(index)">
                                     <div class="avatar_container">
                                         <img class="avatar_icon" :src="`./img/avatar${item.avatar}.jpg`" alt="avatar">
                                     </div>
@@ -87,8 +87,33 @@
                             </div>
 
                         </div>
-                        <div class="col message_window">
 
+                        <!-- Messages window -->
+                        <div class="col message_window h-100">
+                            <!-- Sidebar header -->
+                            <div class="row message_header">
+                                <div class="col w-100 h-100">
+                                    <div class="row h-100 flex align_center justify_between">
+                                        <div class="flex align_center">
+                                            <div> 
+                                                <img class="avatar_my_icon" :src="`./img/avatar${contacts[activeItem].avatar}.jpg`" alt="avatar_io">
+                                            </div>
+                                            <div class="name">
+                                                <h4>{{contacts[activeItem].name}}</h4>
+                                                <h5>Ultimo accesso oggi alle 12:00</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex align_center icon_grey">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <i class="fa-solid fa-paperclip"></i>
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
