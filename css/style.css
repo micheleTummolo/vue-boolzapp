@@ -74,7 +74,6 @@ h5 {
 }
 
 .main_col {
-    background-color: red;
     height: 95vh;
     width: 85vw;
 }
@@ -92,7 +91,7 @@ h5 {
     }
     
     /* Side Header */
-        .side_header, .message_header {
+        .side_header, .message_header, .message_footer {
             padding: .3rem;
             background-color: rgb(234, 234, 234);
         }
@@ -190,14 +189,56 @@ h5 {
 /* Messages wondow */
     .message_window {
         width: 65%;
+        position: relative;
     }
 
-    .message_header {
-        border-left: 1px solid rgb(205, 205, 205);
-    }
+    /* Message header */
+        .message_header {
+            border-left: 1px solid rgb(205, 205, 205);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
 
-    .name h5 {
-        color: gray;
-    }
+        .name h5 {
+            color: gray;
+        }
+    /* Message header */
+
+    /* Message content */
+        .message_content {
+            background-image: url("../img/mine.jpg");
+            background-size: auto;
+        }
+    /* Message content */
+
+    /* Message footer */
+        .message_footer {
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            padding: .5rem;
+        }
+
+        .icon_dark_grey {
+            color: rgb(107, 115, 118);
+        }
+
+        .emoticon, .audio_message {
+            width: 10%;
+            cursor: pointer;
+        }
+
+        .send_message {
+            width: 80%;
+        }
+
+        .send_message input {
+            padding: .5rem;
+            border: 0;
+            border-radius: .3rem;
+        }
+    /* Message footer */
+    
 /* Messages wondow */
   
