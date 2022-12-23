@@ -3,8 +3,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            filter: "",
             messageText: "",
-            messagesNumb: 0,
             activeItem: 0,
             contacts: [
                 {
@@ -176,7 +176,6 @@ createApp({
     methods: {
         visibleContact(index) {
             this.activeItem = index
-            console.log(this.activeItem)
         },
 
         messageReceived() {
@@ -203,6 +202,19 @@ createApp({
 
             setTimeout(this.messageReceived, 1000)
                 
+        },
+
+        fiterContacts() {
+
+            for (let i = 0; i < this.contacts.length; i++) {
+                let avatarName = this.contacts[i].name
+                console.log(avatarName.toLowerCase())
+
+                if (!avatarName.toLowerCase().includes(this.filter))
+                    this.contacts[i].visible = false
+                else
+                    this.contacts[i].visible = true
+            }
         }
     }
 }).mount('#app')
