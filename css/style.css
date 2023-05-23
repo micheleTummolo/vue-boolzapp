@@ -293,15 +293,23 @@ h5 {
 
 /* Messages wondow */
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 750px) {
 
     .sidebar {
         width: 100%;
+    }
+
+    .sidebar_mobile {
         display: none;
     }
 
     .message_window {
         width: 100%;
+        display: none
+    }
+
+    .message_window_mobile {
+        display: block;
     }
 
     .messages {
@@ -310,5 +318,14 @@ h5 {
 
     .message {
         max-width: 70%;
+    }
+
+    .back_button {
+        margin: 0 .5rem;
+        cursor: pointer;
+    }
+
+    .main_col {
+        width: 95vw;
     }
 }

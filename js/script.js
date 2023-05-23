@@ -84,9 +84,9 @@ createApp({
                             status: 'sent'
                         },
                         {
-                                date: '10/01/2020 15:50:00',
-                                message: 'Si, ma preferirei andare al cinema',
-                                status: 'received'
+                            date: '10/01/2020 15:50:00',
+                            message: 'Si, ma preferirei andare al cinema',
+                            status: 'received'
                         }
                     ],
                 },
@@ -176,6 +176,20 @@ createApp({
     methods: {
         visibleContact(index) {
             this.activeItem = index
+            let sidebar = document.getElementsByClassName('sidebar')
+            let message_window = document.getElementsByClassName('message_window')
+
+            sidebar[0].classList.add("sidebar_mobile");
+            message_window[0].classList.add("message_window_mobile");
+        },
+
+        backToContacts() {
+            let sidebar = document.getElementsByClassName('sidebar')
+            let message_window = document.getElementsByClassName('message_window')
+
+            sidebar[0].classList.remove("sidebar_mobile");
+            message_window[0].classList.remove("message_window_mobile");
+
         },
 
         messageReceived() {
@@ -201,7 +215,7 @@ createApp({
             this.messageText = ""
 
             setTimeout(this.messageReceived, 1000)
-                
+
         },
 
         fiterContacts() {
